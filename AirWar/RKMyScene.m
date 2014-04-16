@@ -15,7 +15,12 @@
 
 @end
 
-#define kAirPlaneFiredBulletName @"airPlaneFiredBullet"
+typedef enum EnemyType {
+    HELICOPTER,
+    SHIP
+} EnemyType;
+
+#define kAirPlaneFiredBulletName @""
 #define kBulletSize CGSizeMake(4, 8)
 
 
@@ -88,7 +93,7 @@
             
             for (int colIndex = 0; colIndex < row.count; colIndex++) {
                 [self buildTile:[row objectAtIndex:colIndex]
-                            row:self.removedLines + map.count
+                            row:self.removedLines + (int)map.count
                             col:colIndex];
             }
             
@@ -140,6 +145,18 @@
     }
     if ([item isEqualToString:@"r"]) {
         [self buildRiverAtRow:row andCol: col];
+        
+        int lowerBound = 1;
+        int upperBound = 100;
+        int rndValue = lowerBound + arc4random() % (upperBound - lowerBound);
+        
+        if (rndValue == 10) {
+            [self buildEnemy:1 atRow:row andCol: col];
+        }
+        else if (rndValue == 20) {
+            [self buildEnemy:2 atRow:row andCol: col];
+        }
+        
         return;
     }
 }
@@ -250,6 +267,28 @@
     [self fireBullet:bullet toDestination:bulletDestination withDuration:1.0 soundFileName:@"AirPlaneBullet.wav"];
 }
 
+#pragma mark - Enemies Helpers
+
+-(void) buildEnemy:(int)type atRow:(int)row andCol:(int)col
+{
+    SKNode *world = [self childNodeWithName:@"world"];
+    
+    SKSpriteNode *enemy;
+    
+    if (type == 1) {
+        enemy = [SKSpriteNode spriteNodeWithImageNamed:@"helicopter.png"];
+    } else {
+        enemy = [SKSpriteNode spriteNodeWithImageNamed:@"ship.png"];
+    }
+    
+    enemy.position = CGPointMake(col * teilHeight + teilHeight/2, row * teilWidth + teilWidth/2);
+    enemy.name = @"enemy";
+    enemy.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:enemy.size];
+    enemy.physicsBody.dynamic = NO;
+    enemy.physicsBody.categoryBitMask = ENEMY;
+    
+    [world addChild:enemy];
+}
 
 
 #pragma mark - Sprites
@@ -258,6 +297,7 @@
 {
     if(!_plane) {
         _plane = [SKSpriteNode spriteNodeWithImageNamed:@"airplane.png"];
+        _plane.name = @"plane";
         _plane.size = CGSizeMake(teilHeight*2, teilWidth*2);
         _plane.position = CGPointMake(self.size.width/2, 100);
         _plane.color = [UIColor blackColor];
@@ -277,13 +317,34 @@
     SKSpriteNode *bullet = [SKSpriteNode spriteNodeWithColor:[SKColor greenColor] size:kBulletSize];
     
     bullet.position = CGPointMake(self.plane.position.x, self.plane.position.y + self.plane.frame.size.height - bullet.frame.size.height / 2);
-    bullet.name = kAirPlaneFiredBulletName;
+    bullet.name = @"bullet";
     bullet.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:bullet.size];
     bullet.physicsBody.affectedByGravity = NO;
     bullet.physicsBody.categoryBitMask = BULLET;
     bullet.physicsBody.contactTestBitMask = ENEMY;
     
     return bullet;
+}
+
+#pragma mark - SKPhysicsContactDelegate
+
+- (void)didBeginContact:(SKPhysicsContact *)contact
+{
+    if (([contact.bodyA.node.name isEqualToString:@"enemy"]
+        && [contact.bodyB.node.name isEqualToString:@"bullet"])
+        || ([contact.bodyB.node.name isEqualToString:@"enemy"]
+            && [contact.bodyA.node.name isEqualToString:@"bullet"])) {
+            [contact.bodyA.node removeFromParent];
+            [contact.bodyB.node removeFromParent];
+    }
+    
+    
+    NSLog(@"Contact begin: %@", contact);
+}
+
+- (void)didEndContact:(SKPhysicsContact *)contact
+{
+    NSLog(@"Contact end: %@", contact);
 }
 
 #pragma mark - Core Motion
