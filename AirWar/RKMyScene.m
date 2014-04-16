@@ -78,7 +78,6 @@
         SKAction *worldMove = [SKAction sequence:@[
                                                    [SKAction moveByX:0 y:-teilHeight duration:.2],
                                                    [SKAction runBlock:^{
-            
             NSString *name = [NSString stringWithFormat:@"%d", self.removedLines];
             [world enumerateChildNodesWithName:name usingBlock:^(SKNode *node, BOOL *stop) {
                 [node removeFromParent];
