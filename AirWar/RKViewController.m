@@ -14,7 +14,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
 
+- (IBAction)startGAme:(id)sender {
+    
     // Configure the view.
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;
@@ -27,6 +30,9 @@
     
     // Present the scene.
     [skView presentScene:scene];
+    
+    _AWLogo.hidden = YES;
+    _insertCoin.hidden = YES;
+    
 }
-
 @end

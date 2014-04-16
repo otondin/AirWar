@@ -10,5 +10,10 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface RKViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UIImageView *AWLogo;
+@property (strong, nonatomic) IBOutlet UIButton *insertCoin;
+
+- (IBAction)startGAme:(id)sender;
+
 
 @end
