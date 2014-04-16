@@ -8,6 +8,17 @@
 
 #import "RKMyScene.h"
 
+@interface RKMyScene ()
+
+@property (nonatomic, strong) SKSpriteNode *plane;
+@property (strong) NSMutableArray* tapQueue;
+
+@end
+
+#define kAirPlaneFiredBulletName @"airPlaneFiredBullet"
+#define kBulletSize CGSizeMake(4, 8)
+
+
 @implementation RKMyScene {
     CGFloat teilWidth;
     CGFloat teilHeight;
@@ -91,17 +102,10 @@
         [world runAction:[SKAction repeatActionForever:worldMove]];
         
         
-        SKSpriteNode *plane = [SKSpriteNode spriteNodeWithImageNamed:@"airplane.png"];
-        plane.name = @"plane";
-        plane.position = CGPointMake(self.size.width/2, 100);
-        plane.color = [UIColor blackColor];
-        plane.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:plane.size];
-        plane.physicsBody.allowsRotation = NO;
-        plane.physicsBody.categoryBitMask = AIRPLANE;
-        plane.physicsBody.contactTestBitMask = ENEMY | OBSTACLE;
-        
-        [self addChild:plane];
-        
+        if (self.plane) {
+            [self addChild:self.plane];
+        }
+    
         self.motionManager = [[CMMotionManager alloc] init];
         self.motionManager.accelerometerUpdateInterval = .1;
         
@@ -119,6 +123,11 @@
     return self;
 }
 
+- (void)didMoveToView:(SKView *)view
+{
+    self.tapQueue = [[NSMutableArray alloc] init];
+    self.userInteractionEnabled = YES;
+}
 
 - (void)buildTile:(NSString *)item row:(int)row col:(int)col
 {
@@ -187,33 +196,97 @@
     [world addChild:tile];
 }
 
+#pragma mark - Scene Update Helpers
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    /* Called when a touch begins */
+- (void)processUserTapsForUpdate:(NSTimeInterval)currentTime
+{
+    //    NSArray *tapQueue = [self.tapQueue copy];
     
-//    for (UITouch *touch in touches) {
-//        CGPoint location = [touch locationInNode:self];
-//        
-//        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-//        
-//        sprite.position = location;
-//        
-//        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
-//        
-//        [sprite runAction:[SKAction repeatActionForever:action]];
-//        
-//        [self addChild:sprite];
-//    }
+    for (NSNumber* tapCount in self.tapQueue) {
+        [self fireShipBullets];
+        [self.tapQueue removeObject:tapCount];
+    }
+}
+
+#pragma mark - User touch helpers
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.tapQueue addObject:@1];
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    // Intentional no-op
+}
+
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    // Intentional no-op
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    // Intentional no-op
+}
+
+
+#pragma mark - Bullet Helpers
+
+- (void)fireBullet:(SKNode*)bullet toDestination:(CGPoint)destination withDuration:(NSTimeInterval)duration soundFileName:(NSString*)soundFileName
+{
+    SKAction* bulletAction = [SKAction sequence:@[[SKAction moveTo:destination duration:duration],
+                                                  [SKAction waitForDuration:3.0/60.0],
+                                                  [SKAction removeFromParent]]];
+    
+    SKAction* soundAction  = [SKAction playSoundFileNamed:soundFileName waitForCompletion:YES];
+    [bullet runAction:[SKAction group:@[bulletAction, soundAction]]];
+    [self addChild:bullet];
+}
+
+- (void)fireShipBullets
+{
+    SKNode *bullet = [self makeBullet];
+    CGPoint bulletDestination = CGPointMake(self.plane.position.x, self.frame.size.height + bullet.frame.size.height / 2);
+    [self fireBullet:bullet toDestination:bulletDestination withDuration:1.0 soundFileName:@"AirPlaneBullet.wav"];
+}
+
+
+
+#pragma mark - Sprites
+
+- (SKSpriteNode *)plane
+{
+    if(!_plane) {
+        _plane = [SKSpriteNode spriteNodeWithImageNamed:@"airplane.png"];
+        _plane.size = CGSizeMake(teilHeight*2, teilWidth*2);
+        _plane.position = CGPointMake(self.size.width/2, 100);
+        _plane.color = [UIColor blackColor];
+        _plane.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:_plane.size];
+        _plane.physicsBody.affectedByGravity = NO;
+        _plane.physicsBody.allowsRotation = NO;
+        _plane.physicsBody.categoryBitMask = AIRPLANE;
+        _plane.physicsBody.collisionBitMask = OBSTACLE;
+        _plane.physicsBody.contactTestBitMask = ENEMY;
+    }
+    
+    return _plane;
+}
+
+- (SKNode*)makeBullet
+{
+    SKNode *bullet = bullet = [SKSpriteNode spriteNodeWithColor:[SKColor greenColor] size:kBulletSize];
+    bullet.position = CGPointMake(self.plane.position.x, self.plane.position.y + self.plane.frame.size.height - bullet.frame.size.height / 2);
+    bullet.name = kAirPlaneFiredBulletName;
+    return bullet;
 }
 
 #pragma mark - Core Motion
 
 -(void)update:(NSTimeInterval)currentTime{
-    //NSLog(@"one second");
     
-    SKSpriteNode *_plane = (SKSpriteNode *)[self childNodeWithName:@"plane"];
-    float maxY = self.size.width - _plane.size.width/2;
-    float minY = _plane.size.width/2;
+    float maxY = self.size.width - self.plane.size.width/2;
+    float minY = self.plane.size.width/2;
     
     float newX = 0;
     
@@ -230,10 +303,11 @@
         
     }
     
-    newX = MIN(MAX(newX+_plane.position.x,minY),maxY);
+    newX = MIN(MAX(newX+self.plane.position.x,minY),maxY);
     
+    self.plane.position = CGPointMake(newX, self.plane.position.y);
     
-    _plane.position = CGPointMake(newX, _plane.position.y);
+    [self processUserTapsForUpdate:currentTime];
 }
 
 -(void)outputAccelertionData:(CMAcceleration)acceleration
