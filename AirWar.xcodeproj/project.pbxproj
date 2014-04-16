@@ -25,6 +25,7 @@
 		72B8582F18FE07400073E258 /* AirWarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B8582E18FE07400073E258 /* AirWarTests.m */; };
 		B1746B0A18FE1D83006B70E3 /* map.txt in Resources */ = {isa = PBXBuildFile; fileRef = B1746B0918FE1D83006B70E3 /* map.txt */; };
 		B1746B0C18FE1F4C006B70E3 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1746B0B18FE1F4C006B70E3 /* CoreMotion.framework */; };
+		B1746B0E18FE396A006B70E3 /* AirPlaneBullet.wav in Resources */ = {isa = PBXBuildFile; fileRef = B1746B0D18FE396A006B70E3 /* AirPlaneBullet.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		72B8582E18FE07400073E258 /* AirWarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AirWarTests.m; sourceTree = "<group>"; };
 		B1746B0918FE1D83006B70E3 /* map.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = map.txt; path = "../../AirWar Assets/map.txt"; sourceTree = "<group>"; };
 		B1746B0B18FE1F4C006B70E3 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		B1746B0D18FE396A006B70E3 /* AirPlaneBullet.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = AirPlaneBullet.wav; path = "../../AirWar Assets/AirPlaneBullet.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 		72B8580518FE07400073E258 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B1746B0D18FE396A006B70E3 /* AirPlaneBullet.wav */,
 				72B8580618FE07400073E258 /* AirWar-Info.plist */,
 				72B8580718FE07400073E258 /* InfoPlist.strings */,
 				72B8580A18FE07400073E258 /* main.m */,
@@ -250,6 +253,7 @@
 			files = (
 				72B8580918FE07400073E258 /* InfoPlist.strings in Resources */,
 				72B8581C18FE07400073E258 /* Images.xcassets in Resources */,
+				B1746B0E18FE396A006B70E3 /* AirPlaneBullet.wav in Resources */,
 				B1746B0A18FE1D83006B70E3 /* map.txt in Resources */,
 				72B8581218FE07400073E258 /* Main.storyboard in Resources */,
 			);
