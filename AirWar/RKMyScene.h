@@ -15,7 +15,8 @@ typedef enum: uint32_t
     AIRPLANE = 0x1 << 1,
     ENEMY = 0x1 << 2,
     OBSTACLE = 0x1 << 3,
-    PATH = 0x1 << 4
+    PATH = 0x1 << 4,
+    BULLET = 0x1 << 5
 } bitMasks;
 
 @interface RKMyScene : SKScene <UIAccelerometerDelegate, SKPhysicsContactDelegate>

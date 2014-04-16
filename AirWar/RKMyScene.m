@@ -233,7 +233,7 @@
 
 #pragma mark - Bullet Helpers
 
-- (void)fireBullet:(SKNode*)bullet toDestination:(CGPoint)destination withDuration:(NSTimeInterval)duration soundFileName:(NSString*)soundFileName
+- (void)fireBullet:(SKSpriteNode *)bullet toDestination:(CGPoint)destination withDuration:(NSTimeInterval)duration soundFileName:(NSString*)soundFileName
 {
     SKAction* bulletAction = [SKAction sequence:@[[SKAction moveTo:destination duration:duration],
                                                   [SKAction waitForDuration:3.0/60.0],
@@ -246,7 +246,7 @@
 
 - (void)fireShipBullets
 {
-    SKNode *bullet = [self makeBullet];
+    SKSpriteNode *bullet = [self makeBullet];
     CGPoint bulletDestination = CGPointMake(self.plane.position.x, self.frame.size.height + bullet.frame.size.height / 2);
     [self fireBullet:bullet toDestination:bulletDestination withDuration:1.0 soundFileName:@"AirPlaneBullet.wav"];
 }
@@ -273,11 +273,17 @@
     return _plane;
 }
 
-- (SKNode*)makeBullet
+- (SKSpriteNode *)makeBullet
 {
-    SKNode *bullet = bullet = [SKSpriteNode spriteNodeWithColor:[SKColor greenColor] size:kBulletSize];
+    SKSpriteNode *bullet = [SKSpriteNode spriteNodeWithColor:[SKColor greenColor] size:kBulletSize];
+    
     bullet.position = CGPointMake(self.plane.position.x, self.plane.position.y + self.plane.frame.size.height - bullet.frame.size.height / 2);
     bullet.name = kAirPlaneFiredBulletName;
+    bullet.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:bullet.size];
+    bullet.physicsBody.affectedByGravity = NO;
+    bullet.physicsBody.categoryBitMask = BULLET;
+    bullet.physicsBody.contactTestBitMask = ENEMY;
+    
     return bullet;
 }
 
