@@ -1,0 +1,492 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		72B857FD18FE073F0073E258 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B857FC18FE073F0073E258 /* Foundation.framework */; };
+		72B857FF18FE073F0073E258 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B857FE18FE073F0073E258 /* CoreGraphics.framework */; };
+		72B8580118FE07400073E258 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B8580018FE07400073E258 /* UIKit.framework */; };
+		72B8580318FE07400073E258 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B8580218FE07400073E258 /* SpriteKit.framework */; };
+		72B8580918FE07400073E258 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72B8580718FE07400073E258 /* InfoPlist.strings */; };
+		72B8580B18FE07400073E258 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B8580A18FE07400073E258 /* main.m */; };
+		72B8580F18FE07400073E258 /* RKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B8580E18FE07400073E258 /* RKAppDelegate.m */; };
+		72B8581218FE07400073E258 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72B8581018FE07400073E258 /* Main.storyboard */; };
+		72B8581518FE07400073E258 /* RKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B8581418FE07400073E258 /* RKViewController.m */; };
+		72B8581818FE07400073E258 /* RKMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B8581718FE07400073E258 /* RKMyScene.m */; };
+		72B8581A18FE07400073E258 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 72B8581918FE07400073E258 /* Spaceship.png */; };
+		72B8581C18FE07400073E258 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72B8581B18FE07400073E258 /* Images.xcassets */; };
+		72B8582318FE07400073E258 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B8582218FE07400073E258 /* XCTest.framework */; };
+		72B8582418FE07400073E258 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B857FC18FE073F0073E258 /* Foundation.framework */; };
+		72B8582518FE07400073E258 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B8580018FE07400073E258 /* UIKit.framework */; };
+		72B8582D18FE07400073E258 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72B8582B18FE07400073E258 /* InfoPlist.strings */; };
+		72B8582F18FE07400073E258 /* AirWarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B8582E18FE07400073E258 /* AirWarTests.m */; };
+		72B8583918FE078B0073E258 /* map.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72B8583818FE078B0073E258 /* map.txt */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		72B8582618FE07400073E258 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 72B857F118FE073F0073E258 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 72B857F818FE073F0073E258;
+			remoteInfo = AirWar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		72B857F918FE073F0073E258 /* AirWar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirWar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		72B857FC18FE073F0073E258 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		72B857FE18FE073F0073E258 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		72B8580018FE07400073E258 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		72B8580218FE07400073E258 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		72B8580618FE07400073E258 /* AirWar-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AirWar-Info.plist"; sourceTree = "<group>"; };
+		72B8580818FE07400073E258 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		72B8580A18FE07400073E258 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		72B8580C18FE07400073E258 /* AirWar-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AirWar-Prefix.pch"; sourceTree = "<group>"; };
+		72B8580D18FE07400073E258 /* RKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKAppDelegate.h; sourceTree = "<group>"; };
+		72B8580E18FE07400073E258 /* RKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKAppDelegate.m; sourceTree = "<group>"; };
+		72B8581118FE07400073E258 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		72B8581318FE07400073E258 /* RKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKViewController.h; sourceTree = "<group>"; };
+		72B8581418FE07400073E258 /* RKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKViewController.m; sourceTree = "<group>"; };
+		72B8581618FE07400073E258 /* RKMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKMyScene.h; sourceTree = "<group>"; };
+		72B8581718FE07400073E258 /* RKMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKMyScene.m; sourceTree = "<group>"; };
+		72B8581918FE07400073E258 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		72B8581B18FE07400073E258 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		72B8582118FE07400073E258 /* AirWarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirWarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		72B8582218FE07400073E258 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		72B8582A18FE07400073E258 /* AirWarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AirWarTests-Info.plist"; sourceTree = "<group>"; };
+		72B8582C18FE07400073E258 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		72B8582E18FE07400073E258 /* AirWarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AirWarTests.m; sourceTree = "<group>"; };
+		72B8583818FE078B0073E258 /* map.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = map.txt; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		72B857F618FE073F0073E258 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72B857FF18FE073F0073E258 /* CoreGraphics.framework in Frameworks */,
+				72B8580118FE07400073E258 /* UIKit.framework in Frameworks */,
+				72B8580318FE07400073E258 /* SpriteKit.framework in Frameworks */,
+				72B857FD18FE073F0073E258 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72B8581E18FE07400073E258 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72B8582318FE07400073E258 /* XCTest.framework in Frameworks */,
+				72B8582518FE07400073E258 /* UIKit.framework in Frameworks */,
+				72B8582418FE07400073E258 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		72B857F018FE073F0073E258 = {
+			isa = PBXGroup;
+			children = (
+				72B8580418FE07400073E258 /* AirWar */,
+				72B8582818FE07400073E258 /* AirWarTests */,
+				72B857FB18FE073F0073E258 /* Frameworks */,
+				72B857FA18FE073F0073E258 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		72B857FA18FE073F0073E258 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				72B857F918FE073F0073E258 /* AirWar.app */,
+				72B8582118FE07400073E258 /* AirWarTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		72B857FB18FE073F0073E258 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				72B857FC18FE073F0073E258 /* Foundation.framework */,
+				72B857FE18FE073F0073E258 /* CoreGraphics.framework */,
+				72B8580018FE07400073E258 /* UIKit.framework */,
+				72B8580218FE07400073E258 /* SpriteKit.framework */,
+				72B8582218FE07400073E258 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		72B8580418FE07400073E258 /* AirWar */ = {
+			isa = PBXGroup;
+			children = (
+				72B8583818FE078B0073E258 /* map.txt */,
+				72B8580D18FE07400073E258 /* RKAppDelegate.h */,
+				72B8580E18FE07400073E258 /* RKAppDelegate.m */,
+				72B8581018FE07400073E258 /* Main.storyboard */,
+				72B8581318FE07400073E258 /* RKViewController.h */,
+				72B8581418FE07400073E258 /* RKViewController.m */,
+				72B8581618FE07400073E258 /* RKMyScene.h */,
+				72B8581718FE07400073E258 /* RKMyScene.m */,
+				72B8581918FE07400073E258 /* Spaceship.png */,
+				72B8581B18FE07400073E258 /* Images.xcassets */,
+				72B8580518FE07400073E258 /* Supporting Files */,
+			);
+			path = AirWar;
+			sourceTree = "<group>";
+		};
+		72B8580518FE07400073E258 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				72B8580618FE07400073E258 /* AirWar-Info.plist */,
+				72B8580718FE07400073E258 /* InfoPlist.strings */,
+				72B8580A18FE07400073E258 /* main.m */,
+				72B8580C18FE07400073E258 /* AirWar-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		72B8582818FE07400073E258 /* AirWarTests */ = {
+			isa = PBXGroup;
+			children = (
+				72B8582E18FE07400073E258 /* AirWarTests.m */,
+				72B8582918FE07400073E258 /* Supporting Files */,
+			);
+			path = AirWarTests;
+			sourceTree = "<group>";
+		};
+		72B8582918FE07400073E258 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				72B8582A18FE07400073E258 /* AirWarTests-Info.plist */,
+				72B8582B18FE07400073E258 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		72B857F818FE073F0073E258 /* AirWar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 72B8583218FE07400073E258 /* Build configuration list for PBXNativeTarget "AirWar" */;
+			buildPhases = (
+				72B857F518FE073F0073E258 /* Sources */,
+				72B857F618FE073F0073E258 /* Frameworks */,
+				72B857F718FE073F0073E258 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AirWar;
+			productName = AirWar;
+			productReference = 72B857F918FE073F0073E258 /* AirWar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		72B8582018FE07400073E258 /* AirWarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 72B8583518FE07400073E258 /* Build configuration list for PBXNativeTarget "AirWarTests" */;
+			buildPhases = (
+				72B8581D18FE07400073E258 /* Sources */,
+				72B8581E18FE07400073E258 /* Frameworks */,
+				72B8581F18FE07400073E258 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				72B8582718FE07400073E258 /* PBXTargetDependency */,
+			);
+			name = AirWarTests;
+			productName = AirWarTests;
+			productReference = 72B8582118FE07400073E258 /* AirWarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		72B857F118FE073F0073E258 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RK;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Rodrigo Krummenauer";
+				TargetAttributes = {
+					72B8582018FE07400073E258 = {
+						TestTargetID = 72B857F818FE073F0073E258;
+					};
+				};
+			};
+			buildConfigurationList = 72B857F418FE073F0073E258 /* Build configuration list for PBXProject "AirWar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 72B857F018FE073F0073E258;
+			productRefGroup = 72B857FA18FE073F0073E258 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				72B857F818FE073F0073E258 /* AirWar */,
+				72B8582018FE07400073E258 /* AirWarTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		72B857F718FE073F0073E258 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72B8580918FE07400073E258 /* InfoPlist.strings in Resources */,
+				72B8581C18FE07400073E258 /* Images.xcassets in Resources */,
+				72B8583918FE078B0073E258 /* map.txt in Resources */,
+				72B8581A18FE07400073E258 /* Spaceship.png in Resources */,
+				72B8581218FE07400073E258 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72B8581F18FE07400073E258 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72B8582D18FE07400073E258 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		72B857F518FE073F0073E258 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72B8580B18FE07400073E258 /* main.m in Sources */,
+				72B8580F18FE07400073E258 /* RKAppDelegate.m in Sources */,
+				72B8581518FE07400073E258 /* RKViewController.m in Sources */,
+				72B8581818FE07400073E258 /* RKMyScene.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		72B8581D18FE07400073E258 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72B8582F18FE07400073E258 /* AirWarTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		72B8582718FE07400073E258 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 72B857F818FE073F0073E258 /* AirWar */;
+			targetProxy = 72B8582618FE07400073E258 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		72B8580718FE07400073E258 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				72B8580818FE07400073E258 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		72B8581018FE07400073E258 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				72B8581118FE07400073E258 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		72B8582B18FE07400073E258 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				72B8582C18FE07400073E258 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		72B8583018FE07400073E258 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		72B8583118FE07400073E258 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		72B8583318FE07400073E258 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AirWar/AirWar-Prefix.pch";
+				INFOPLIST_FILE = "AirWar/AirWar-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		72B8583418FE07400073E258 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AirWar/AirWar-Prefix.pch";
+				INFOPLIST_FILE = "AirWar/AirWar-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		72B8583618FE07400073E258 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AirWar.app/AirWar";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AirWar/AirWar-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "AirWarTests/AirWarTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		72B8583718FE07400073E258 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AirWar.app/AirWar";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AirWar/AirWar-Prefix.pch";
+				INFOPLIST_FILE = "AirWarTests/AirWarTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		72B857F418FE073F0073E258 /* Build configuration list for PBXProject "AirWar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72B8583018FE07400073E258 /* Debug */,
+				72B8583118FE07400073E258 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		72B8583218FE07400073E258 /* Build configuration list for PBXNativeTarget "AirWar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72B8583318FE07400073E258 /* Debug */,
+				72B8583418FE07400073E258 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		72B8583518FE07400073E258 /* Build configuration list for PBXNativeTarget "AirWarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				72B8583618FE07400073E258 /* Debug */,
+				72B8583718FE07400073E258 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 72B857F118FE073F0073E258 /* Project object */;
+}
