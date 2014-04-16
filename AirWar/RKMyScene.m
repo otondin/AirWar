@@ -11,6 +11,8 @@
 @implementation RKMyScene {
     CGFloat teilWidth;
     CGFloat teilHeight;
+    double currentMaxAccelX;
+    double currentMaxAccelY;
 }
 
 -(id)initWithSize:(CGSize)size {    
@@ -90,13 +92,12 @@
         
         
         SKSpriteNode *plane = [SKSpriteNode spriteNodeWithImageNamed:@"airplane.png"];
+        plane.name = @"plane";
         plane.position = CGPointMake(self.size.width/2, 100);
         plane.color = [UIColor blackColor];
         plane.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:plane.size];
-        
         plane.physicsBody.allowsRotation = NO;
         plane.physicsBody.categoryBitMask = AIRPLANE;
-        plane.physicsBody.collisionBitMask = WORLD;
         plane.physicsBody.contactTestBitMask = ENEMY | OBSTACLE;
         
         [self addChild:plane];
@@ -133,7 +134,6 @@
         [self buildRiverAtRow:row andCol: col];
         return;
     }
-    
 }
 
 
@@ -164,6 +164,10 @@
     tile.name = [NSString stringWithFormat:@"%d", row];
     tile.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:tile.size];
     tile.physicsBody.dynamic = NO;
+    tile.physicsBody.linearDamping = 0;
+    tile.physicsBody.restitution = 0;
+    tile.physicsBody.categoryBitMask = OBSTACLE;
+    tile.physicsBody.collisionBitMask = AIRPLANE;
     
     [world addChild:tile];
 }
@@ -204,24 +208,46 @@
 
 #pragma mark - Core Motion
 
-- (void)outputAccelertionData:(CMAcceleration)acceleration
-{
-    double maxAccelerationX = 0.1;
-    double accelerationAdjusted = acceleration.x;
+-(void)update:(NSTimeInterval)currentTime{
+    //NSLog(@"one second");
     
-    if (fabs(acceleration.x) > maxAccelerationX) {
-        if (acceleration.x < 0) {
-            accelerationAdjusted = - maxAccelerationX;
-        } else {
-            accelerationAdjusted = maxAccelerationX;
-        }
+    SKSpriteNode *_plane = (SKSpriteNode *)[self childNodeWithName:@"plane"];
+    float maxY = self.size.width - _plane.size.width/2;
+    float minY = _plane.size.width/2;
+    
+    float newX = 0;
+    
+    if(currentMaxAccelX > 0.05){
+        newX = currentMaxAccelX * 10;
+        
+    }
+    else if(currentMaxAccelX < -0.05){
+        newX = currentMaxAccelX*10;
+        
+    }
+    else{
+        newX = currentMaxAccelX*10;
+        
     }
     
-    self.physicsWorld.gravity = CGVectorMake(accelerationAdjusted * 20, 0.0);
+    newX = MIN(MAX(newX+_plane.position.x,minY),maxY);
+    
+    
+    _plane.position = CGPointMake(newX, _plane.position.y);
 }
 
--(void)update:(CFTimeInterval)currentTime {
-    /* Called before each frame is rendered */
+-(void)outputAccelertionData:(CMAcceleration)acceleration
+{
+    currentMaxAccelX = 0;
+    currentMaxAccelY = 0;
+    
+    if(fabs(acceleration.x) > fabs(currentMaxAccelX))
+    {
+        currentMaxAccelX = acceleration.x;
+    }
+    if(fabs(acceleration.y) > fabs(currentMaxAccelY))
+    {
+        currentMaxAccelY = acceleration.y;
+    }
 }
-
 @end
