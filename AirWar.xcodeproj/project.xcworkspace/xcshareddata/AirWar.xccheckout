@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>DB0E6E08-DA06-48C2-97CD-C195E94978A8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>AirWar</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BF91463E-7223-4B23-88D4-21B7859D58F6</key>
+		<string>https://github.com/otondin/AirWar.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>AirWar.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BF91463E-7223-4B23-88D4-21B7859D58F6</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/otondin/AirWar.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BF91463E-7223-4B23-88D4-21B7859D58F6</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BF91463E-7223-4B23-88D4-21B7859D58F6</string>
+			<key>IDESourceControlWCCName</key>
+			<string>AirWar</string>
+		</dict>
+	</array>
+</dict>
+</plist>
