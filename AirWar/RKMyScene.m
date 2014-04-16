@@ -250,8 +250,6 @@
     [self fireBullet:bullet toDestination:bulletDestination withDuration:1.0 soundFileName:@"AirPlaneBullet.wav"];
 }
 
-
-
 #pragma mark - Sprites
 
 - (SKSpriteNode *)plane
