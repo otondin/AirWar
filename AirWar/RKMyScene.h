@@ -18,7 +18,7 @@ typedef enum: uint32_t
     PATH = 0x1 << 4
 } bitMasks;
 
-@interface RKMyScene : SKScene
+@interface RKMyScene : SKScene <UIAccelerometerDelegate, SKPhysicsContactDelegate>
 
 @property int removedLines;
 
