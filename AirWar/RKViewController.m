@@ -16,6 +16,11 @@
     [super viewDidLoad];
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
 - (IBAction)startGAme:(id)sender {
     
     // Configure the view.

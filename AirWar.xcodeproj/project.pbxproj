@@ -26,6 +26,7 @@
 		72B8582D18FE07400073E258 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72B8582B18FE07400073E258 /* InfoPlist.strings */; };
 		72B8582F18FE07400073E258 /* AirWarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B8582E18FE07400073E258 /* AirWarTests.m */; };
 		B1746B0C18FE1F4C006B70E3 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1746B0B18FE1F4C006B70E3 /* CoreMotion.framework */; };
+		B1746B1418FE5156006B70E3 /* AW-Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B1746B1318FE5156006B70E3 /* AW-Logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		72B8582C18FE07400073E258 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		72B8582E18FE07400073E258 /* AirWarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AirWarTests.m; sourceTree = "<group>"; };
 		B1746B0B18FE1F4C006B70E3 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		B1746B1318FE5156006B70E3 /* AW-Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AW-Logo.png"; path = "../../AirWar Assets/AW-Logo.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 		72B8580518FE07400073E258 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B1746B1318FE5156006B70E3 /* AW-Logo.png */,
 				032038AE18FE406C00D43CE9 /* AirPlaneBullet.wav */,
 				72B8580618FE07400073E258 /* AirWar-Info.plist */,
 				72B8580718FE07400073E258 /* InfoPlist.strings */,
@@ -255,6 +258,7 @@
 				72B8581C18FE07400073E258 /* Images.xcassets in Resources */,
 				032038AD18FE406400D43CE9 /* map.txt in Resources */,
 				032038AF18FE406C00D43CE9 /* AirPlaneBullet.wav in Resources */,
+				B1746B1418FE5156006B70E3 /* AW-Logo.png in Resources */,
 				72B8581218FE07400073E258 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,10 +407,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AirWar/AirWar-Prefix.pch";
 				INFOPLIST_FILE = "AirWar/AirWar-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -418,10 +424,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AirWar/AirWar-Prefix.pch";
 				INFOPLIST_FILE = "AirWar/AirWar-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};

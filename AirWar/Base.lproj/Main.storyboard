@@ -16,10 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AW-Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ael-tR-PJ3">
-                                <rect key="frame" x="0.0" y="66" width="320" height="302"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fv2-4T-Rri">
                                 <rect key="frame" x="91" y="402" width="138" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -32,11 +28,15 @@
                                     <action selector="startGAme:" destination="LVB-YS-i5n" eventType="touchUpInside" id="FNh-dN-WAC"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AW-Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Asv-at-1yc">
+                                <rect key="frame" x="0.0" y="45" width="320" height="309"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                     </view>
                     <connections>
-                        <outlet property="AWLogo" destination="Ael-tR-PJ3" id="4Gg-xJ-Tgg"/>
+                        <outlet property="AWLogo" destination="Asv-at-1yc" id="jFn-HN-NwD"/>
                         <outlet property="insertCoin" destination="Fv2-4T-Rri" id="8hs-JJ-k8P"/>
                     </connections>
                 </viewController>
