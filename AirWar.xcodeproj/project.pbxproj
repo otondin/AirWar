@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		032038AD18FE406400D43CE9 /* map.txt in Resources */ = {isa = PBXBuildFile; fileRef = 032038AC18FE406400D43CE9 /* map.txt */; };
+		032038AF18FE406C00D43CE9 /* AirPlaneBullet.wav in Resources */ = {isa = PBXBuildFile; fileRef = 032038AE18FE406C00D43CE9 /* AirPlaneBullet.wav */; };
 		72B857FD18FE073F0073E258 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B857FC18FE073F0073E258 /* Foundation.framework */; };
 		72B857FF18FE073F0073E258 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B857FE18FE073F0073E258 /* CoreGraphics.framework */; };
 		72B8580118FE07400073E258 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B8580018FE07400073E258 /* UIKit.framework */; };
@@ -23,10 +25,7 @@
 		72B8582518FE07400073E258 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B8580018FE07400073E258 /* UIKit.framework */; };
 		72B8582D18FE07400073E258 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72B8582B18FE07400073E258 /* InfoPlist.strings */; };
 		72B8582F18FE07400073E258 /* AirWarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B8582E18FE07400073E258 /* AirWarTests.m */; };
-		B1746B0A18FE1D83006B70E3 /* map.txt in Resources */ = {isa = PBXBuildFile; fileRef = B1746B0918FE1D83006B70E3 /* map.txt */; };
 		B1746B0C18FE1F4C006B70E3 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1746B0B18FE1F4C006B70E3 /* CoreMotion.framework */; };
-		B1746B0E18FE396A006B70E3 /* AirPlaneBullet.wav in Resources */ = {isa = PBXBuildFile; fileRef = B1746B0D18FE396A006B70E3 /* AirPlaneBullet.wav */; };
-		B1746B1218FE3B7C006B70E3 /* AW-Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B1746B1118FE3B7C006B70E3 /* AW-Logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		032038AC18FE406400D43CE9 /* map.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = map.txt; sourceTree = "<group>"; };
+		032038AE18FE406C00D43CE9 /* AirPlaneBullet.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = AirPlaneBullet.wav; sourceTree = "<group>"; };
 		72B857F918FE073F0073E258 /* AirWar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirWar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72B857FC18FE073F0073E258 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		72B857FE18FE073F0073E258 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,10 +63,7 @@
 		72B8582A18FE07400073E258 /* AirWarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AirWarTests-Info.plist"; sourceTree = "<group>"; };
 		72B8582C18FE07400073E258 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		72B8582E18FE07400073E258 /* AirWarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AirWarTests.m; sourceTree = "<group>"; };
-		B1746B0918FE1D83006B70E3 /* map.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = map.txt; path = "../../AirWar Assets/map.txt"; sourceTree = "<group>"; };
 		B1746B0B18FE1F4C006B70E3 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
-		B1746B0D18FE396A006B70E3 /* AirPlaneBullet.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = AirPlaneBullet.wav; path = "../../AirWar Assets/AirPlaneBullet.wav"; sourceTree = "<group>"; };
-		B1746B1118FE3B7C006B70E3 /* AW-Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AW-Logo.png"; path = "../../AirWar Assets/AW-Logo.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +127,7 @@
 		72B8580418FE07400073E258 /* AirWar */ = {
 			isa = PBXGroup;
 			children = (
-				B1746B0918FE1D83006B70E3 /* map.txt */,
+				032038AC18FE406400D43CE9 /* map.txt */,
 				72B8580D18FE07400073E258 /* RKAppDelegate.h */,
 				72B8580E18FE07400073E258 /* RKAppDelegate.m */,
 				72B8581018FE07400073E258 /* Main.storyboard */,
@@ -146,8 +144,7 @@
 		72B8580518FE07400073E258 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B1746B1118FE3B7C006B70E3 /* AW-Logo.png */,
-				B1746B0D18FE396A006B70E3 /* AirPlaneBullet.wav */,
+				032038AE18FE406C00D43CE9 /* AirPlaneBullet.wav */,
 				72B8580618FE07400073E258 /* AirWar-Info.plist */,
 				72B8580718FE07400073E258 /* InfoPlist.strings */,
 				72B8580A18FE07400073E258 /* main.m */,
@@ -256,9 +253,8 @@
 			files = (
 				72B8580918FE07400073E258 /* InfoPlist.strings in Resources */,
 				72B8581C18FE07400073E258 /* Images.xcassets in Resources */,
-				B1746B0E18FE396A006B70E3 /* AirPlaneBullet.wav in Resources */,
-				B1746B0A18FE1D83006B70E3 /* map.txt in Resources */,
-				B1746B1218FE3B7C006B70E3 /* AW-Logo.png in Resources */,
+				032038AD18FE406400D43CE9 /* map.txt in Resources */,
+				032038AF18FE406C00D43CE9 /* AirPlaneBullet.wav in Resources */,
 				72B8581218FE07400073E258 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
