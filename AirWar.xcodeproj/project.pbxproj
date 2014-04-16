@@ -17,14 +17,14 @@
 		72B8581218FE07400073E258 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72B8581018FE07400073E258 /* Main.storyboard */; };
 		72B8581518FE07400073E258 /* RKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B8581418FE07400073E258 /* RKViewController.m */; };
 		72B8581818FE07400073E258 /* RKMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B8581718FE07400073E258 /* RKMyScene.m */; };
-		72B8581A18FE07400073E258 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 72B8581918FE07400073E258 /* Spaceship.png */; };
 		72B8581C18FE07400073E258 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72B8581B18FE07400073E258 /* Images.xcassets */; };
 		72B8582318FE07400073E258 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B8582218FE07400073E258 /* XCTest.framework */; };
 		72B8582418FE07400073E258 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B857FC18FE073F0073E258 /* Foundation.framework */; };
 		72B8582518FE07400073E258 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B8580018FE07400073E258 /* UIKit.framework */; };
 		72B8582D18FE07400073E258 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 72B8582B18FE07400073E258 /* InfoPlist.strings */; };
 		72B8582F18FE07400073E258 /* AirWarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B8582E18FE07400073E258 /* AirWarTests.m */; };
-		72B8583918FE078B0073E258 /* map.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72B8583818FE078B0073E258 /* map.txt */; };
+		B1746B0A18FE1D83006B70E3 /* map.txt in Resources */ = {isa = PBXBuildFile; fileRef = B1746B0918FE1D83006B70E3 /* map.txt */; };
+		B1746B0C18FE1F4C006B70E3 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1746B0B18FE1F4C006B70E3 /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,14 +54,14 @@
 		72B8581418FE07400073E258 /* RKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKViewController.m; sourceTree = "<group>"; };
 		72B8581618FE07400073E258 /* RKMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RKMyScene.h; sourceTree = "<group>"; };
 		72B8581718FE07400073E258 /* RKMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RKMyScene.m; sourceTree = "<group>"; };
-		72B8581918FE07400073E258 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		72B8581B18FE07400073E258 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		72B8582118FE07400073E258 /* AirWarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirWarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72B8582218FE07400073E258 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		72B8582A18FE07400073E258 /* AirWarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AirWarTests-Info.plist"; sourceTree = "<group>"; };
 		72B8582C18FE07400073E258 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		72B8582E18FE07400073E258 /* AirWarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AirWarTests.m; sourceTree = "<group>"; };
-		72B8583818FE078B0073E258 /* map.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = map.txt; sourceTree = "<group>"; };
+		B1746B0918FE1D83006B70E3 /* map.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = map.txt; path = "../../AirWar Assets/map.txt"; sourceTree = "<group>"; };
+		B1746B0B18FE1F4C006B70E3 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1746B0C18FE1F4C006B70E3 /* CoreMotion.framework in Frameworks */,
 				72B857FF18FE073F0073E258 /* CoreGraphics.framework in Frameworks */,
 				72B8580118FE07400073E258 /* UIKit.framework in Frameworks */,
 				72B8580318FE07400073E258 /* SpriteKit.framework in Frameworks */,
@@ -111,6 +112,7 @@
 		72B857FB18FE073F0073E258 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B1746B0B18FE1F4C006B70E3 /* CoreMotion.framework */,
 				72B857FC18FE073F0073E258 /* Foundation.framework */,
 				72B857FE18FE073F0073E258 /* CoreGraphics.framework */,
 				72B8580018FE07400073E258 /* UIKit.framework */,
@@ -123,7 +125,7 @@
 		72B8580418FE07400073E258 /* AirWar */ = {
 			isa = PBXGroup;
 			children = (
-				72B8583818FE078B0073E258 /* map.txt */,
+				B1746B0918FE1D83006B70E3 /* map.txt */,
 				72B8580D18FE07400073E258 /* RKAppDelegate.h */,
 				72B8580E18FE07400073E258 /* RKAppDelegate.m */,
 				72B8581018FE07400073E258 /* Main.storyboard */,
@@ -131,7 +133,6 @@
 				72B8581418FE07400073E258 /* RKViewController.m */,
 				72B8581618FE07400073E258 /* RKMyScene.h */,
 				72B8581718FE07400073E258 /* RKMyScene.m */,
-				72B8581918FE07400073E258 /* Spaceship.png */,
 				72B8581B18FE07400073E258 /* Images.xcassets */,
 				72B8580518FE07400073E258 /* Supporting Files */,
 			);
@@ -215,6 +216,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Rodrigo Krummenauer";
 				TargetAttributes = {
+					72B857F818FE073F0073E258 = {
+						DevelopmentTeam = 7CP79LM7LH;
+					};
 					72B8582018FE07400073E258 = {
 						TestTargetID = 72B857F818FE073F0073E258;
 					};
@@ -246,8 +250,7 @@
 			files = (
 				72B8580918FE07400073E258 /* InfoPlist.strings in Resources */,
 				72B8581C18FE07400073E258 /* Images.xcassets in Resources */,
-				72B8583918FE078B0073E258 /* map.txt in Resources */,
-				72B8581A18FE07400073E258 /* Spaceship.png in Resources */,
+				B1746B0A18FE1D83006B70E3 /* map.txt in Resources */,
 				72B8581218FE07400073E258 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,6 +398,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AirWar/AirWar-Prefix.pch";
 				INFOPLIST_FILE = "AirWar/AirWar-Info.plist";
@@ -409,6 +413,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AirWar/AirWar-Prefix.pch";
 				INFOPLIST_FILE = "AirWar/AirWar-Info.plist";
@@ -477,6 +482,7 @@
 				72B8583418FE07400073E258 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		72B8583518FE07400073E258 /* Build configuration list for PBXNativeTarget "AirWarTests" */ = {
 			isa = XCConfigurationList;
@@ -485,6 +491,7 @@
 				72B8583718FE07400073E258 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

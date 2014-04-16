@@ -15,9 +15,13 @@
 
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
-        /* Setup your scene here */
         
-        self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
+        self.physicsWorld.contactDelegate = self;
+        self.physicsWorld.gravity = CGVectorMake(0, 0);
+        self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
+        self.physicsBody.linearDamping = 0;
+        self.physicsBody.categoryBitMask = WORLD;
+        self.physicsBody.collisionBitMask = AIRPLANE;
         
         SKSpriteNode *world = [SKSpriteNode node];
         world.name = @"world";
@@ -86,16 +90,16 @@
         
         
         SKSpriteNode *plane = [SKSpriteNode spriteNodeWithImageNamed:@"airplane.png"];
-        plane.size = CGSizeMake(teilHeight*2, teilWidth*2);
         plane.position = CGPointMake(self.size.width/2, 100);
         plane.color = [UIColor blackColor];
-        [self addChild:plane];
         plane.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:plane.size];
-        plane.physicsBody.affectedByGravity = NO;
+        
         plane.physicsBody.allowsRotation = NO;
         plane.physicsBody.categoryBitMask = AIRPLANE;
         plane.physicsBody.collisionBitMask = WORLD;
         plane.physicsBody.contactTestBitMask = ENEMY | OBSTACLE;
+        
+        [self addChild:plane];
         
         self.motionManager = [[CMMotionManager alloc] init];
         self.motionManager.accelerometerUpdateInterval = .1;
@@ -156,7 +160,7 @@
     
     tile.position = CGPointMake(col * teilHeight + teilHeight/2, row * teilWidth + teilWidth/2);
     tile.size = CGSizeMake(teilWidth, teilHeight);
-    tile.color = [UIColor whiteColor];
+    tile.color = [UIColor greenColor];
     tile.name = [NSString stringWithFormat:@"%d", row];
     tile.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:tile.size];
     tile.physicsBody.dynamic = NO;
